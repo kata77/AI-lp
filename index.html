@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIプログラミング学習コミュニティ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #eaf8ff;
+            color: #1a3a5a;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(45deg, #007bff, #00a2ff);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: bold;
+        }
+        header p {
+            font-size: 1.3em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #fff;
+            padding: 15px 35px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 25px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .cta-button:hover {
+            background-color: #e68900;
+            transform: translateY(-2px);
+        }
+        .discord-button {
+             background-color: #5865F2; /* Discord Blue */
+        }
+        .discord-button:hover {
+            background-color: #4752C4;
+        }
+        .section {
+            padding: 70px 0;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #0056b3;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .feature-item {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.1);
+            width: calc(33% - 60px);
+            min-width: 290px;
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 86, 179, 0.15);
+        }
+        .feature-item h3 {
+            font-size: 1.6em;
+            margin-top: 0;
+            color: #0056b3;
+        }
+        .testimonial {
+            background: #fff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.1);
+            max-width: 650px;
+            margin: 0 auto 25px;
+            border-left: 5px solid #007bff;
+        }
+        .testimonial p {
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        .testimonial .author {
+            font-weight: bold;
+            margin-top: 15px;
+            text-align: right;
+            color: #0056b3;
+        }
+        footer {
+            background: #0056b3;
+            color: #fff;
+            text-align: center;
+            padding: 50px 0;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>仲間と学ぶ、実践する。<br>AIプログラミングで未来を創る。</h1>
+            <p>未経験からでも、AIエンジニアを目指せる学習コミュニティ</p>
+            <a href="https://discord.gg/your-invite-link" class="cta-button">今すぐDiscordに参加する</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section" id="about">
+            <h2>こんな悩み、ありませんか？</h2>
+            <p style="max-width: 600px; margin: 0 auto 40px;">独学での挫折、エラーが解決できない、最新情報が追えない...<br>AI学習の悩みは、仲間と一緒なら乗り越えられます。</p>
+        </section>
+
+        <section class="section" id="features">
+            <h2>コミュニティの特徴</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <h3>現役エンジニアのサポート</h3>
+                    <p>経験豊富な現役AIエンジニアが、あなたの学習をメンタリング。実践的なスキルが身につきます。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>切磋琢磨できる仲間</h3>
+                    <p>同じ目標を持つ仲間と交流し、モチベーションを維持。一人では続かない学習も、皆と一緒なら頑張れます。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>実践的なプロジェクト</h3>
+                    <p>学んだ知識を活かして、チームでプロジェクト開発に挑戦。ポートフォリオになる成果物を作成できます。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="testimonials">
+            <h2>参加者の声</h2>
+            <div class="testimonial">
+                <p>"質問するとすぐに的確なアドバイスがもらえて、エラーで何日も悩むことがなくなりました。本当に感謝しています！"</p>
+                <p class="author">- T.Kさん (20代・学生)</p>
+            </div>
+            <div class="testimonial">
+                <p>"一人では絶対に完成できなかったポートフォリオを、チーム開発で作り上げることができました。最高の仲間に出会えました。"</p>
+                <p class="author">- S.Yさん (30代・会社員)</p>
+            </div>
+        </section>
+
+        <section class="section" id="cta">
+            <h2>さあ、あなたもAI学習の第一歩を踏み出そう</h2>
+            <p>私たちのコミュニティで、AIエンジニアになる夢を叶えませんか？<br>参加は下のボタンから。あなたをお待ちしています。</p>
+            <a href="https://discord.gg/your-invite-link" class="cta-button">今すぐDiscordに参加する</a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 AIプログラミング学習コミュニティ. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
