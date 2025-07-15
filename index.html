@@ -4,121 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIプログラミング学習コミュニティ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: #eaf8ff;
-            color: #1a3a5a;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
         }
         .container {
-            max-width: 960px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
         }
         header {
-            background: linear-gradient(45deg, #007bff, #00a2ff);
+            background: linear-gradient(135deg, #ff00ff, #00ffff);
             color: #fff;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
         header h1 {
-            font-size: 3em;
+            font-size: 4em;
             margin: 0;
-            font-weight: bold;
+            font-weight: 900;
+            text-shadow: 0 0 15px rgba(0,0,0,0.5);
         }
         header p {
-            font-size: 1.3em;
-            margin-top: 10px;
-            opacity: 0.9;
+            font-size: 1.5em;
+            margin-top: 15px;
         }
         .cta-button {
             display: inline-block;
-            background-color: #ff9800;
-            color: #fff;
-            padding: 15px 35px;
-            font-size: 1.2em;
+            background: linear-gradient(45deg, #f9ff00, #ff8c00);
+            color: #1a1a2e;
+            padding: 20px 45px;
+            font-size: 1.4em;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
-            margin-top: 25px;
-            transition: background-color 0.3s, transform 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
+            border: 2px solid #fff;
         }
         .cta-button:hover {
-            background-color: #e68900;
-            transform: translateY(-2px);
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 15px 40px rgba(255, 140, 0, 0.6);
         }
         .discord-button {
-             background-color: #5865F2; /* Discord Blue */
+            background: linear-gradient(45deg, #7289da, #5865f2);
+            box-shadow: 0 10px 30px rgba(88, 101, 242, 0.4);
         }
         .discord-button:hover {
-            background-color: #4752C4;
+            box-shadow: 0 15px 40px rgba(88, 101, 242, 0.6);
         }
         .section {
-            padding: 70px 0;
+            padding: 80px 0;
             text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
         .section h2 {
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            color: #0056b3;
+            font-size: 3em;
+            margin-bottom: 60px;
+            color: #00ffff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
         .features {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
         .feature-item {
-            background: #fff;
+            background: #1f1f3a;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.1);
-            width: calc(50% - 80px); /* Adjusted for 2 columns */
-            min-width: 290px;
-            box-sizing: border-box;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+            transition: transform 0.4s, box-shadow 0.4s;
+            border: 1px solid #00ffff;
         }
         .feature-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 86, 179, 0.15);
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3);
+        }
+        .feature-item .icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #ff00ff;
         }
         .feature-item h3 {
-            font-size: 1.6em;
+            font-size: 1.8em;
             margin-top: 0;
-            color: #0056b3;
+            color: #00ffff;
         }
         .testimonial {
-            background: #fff;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.1);
-            max-width: 650px;
-            margin: 0 auto 25px;
-            border-left: 5px solid #007bff;
-        }
-        .testimonial p {
-            font-style: italic;
-            font-size: 1.1em;
-        }
-        .testimonial .author {
-            font-weight: bold;
-            margin-top: 15px;
-            text-align: right;
-            color: #0056b3;
+            background: #1f1f3a;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.1);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            border-left: 7px solid #ff00ff;
+            text-align: left;
         }
         footer {
-            background: #0056b3;
-            color: #fff;
+            background: #111122;
+            color: #e0e0e0;
             text-align: center;
-            padding: 50px 0;
-        }
-        footer p {
-            margin: 0;
-            font-size: 1.1em;
+            padding: 60px 0;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -126,64 +129,86 @@
 
     <header>
         <div class="container">
-            <h1>仲間と学ぶ、実践する。<br>AIプログラミングで未来を創る。</h1>
-            <p>未経験からでも、AIエンジニアを目指せる学習コミュニティ</p>
-            <a href="https://discord.gg/your-invite-link" class="cta-button">今すぐDiscordに参加する</a>
+            <h1>AI REVOLUTION</h1>
+            <p>君のコードが、世界を変える。</p>
+            <a href="https://discord.gg/your-invite-link" class="cta-button discord-button"><i class="fab fa-discord"></i> Discordで参加</a>
         </div>
     </header>
 
     <div class="container">
         <section class="section" id="about">
-            <h2>こんな悩み、ありませんか？</h2>
-            <p style="max-width: 600px; margin: 0 auto 40px;">独学での挫折、エラーが解決できない、最新情報が追えない...<br>AI学習の悩みは、仲間と一緒なら乗り越えられます。</p>
+            <h2>Are you ready to change?</h2>
+            <p style="max-width: 700px; margin: 0 auto 50px; font-size: 1.2em;">
+                「独学はもう限界...」「エラーの沼から抜け出せない...」<br>
+                その悩み、ここで終わらせよう。最強の仲間と、最高の環境が君を待っている。
+            </p>
         </section>
 
         <section class="section" id="features">
-            <h2>コミュニティの特徴</h2>
+            <h2>FEATURES</h2>
             <div class="features">
                 <div class="feature-item">
-                    <h3>現役エンジニアのサポート</h3>
-                    <p>経験豊富な現役AIエンジニアが、あなたの学習をメンタリング。実践的なスキルが身につきます。</p>
+                    <div class="icon"><i class="fas fa-user-secret"></i></div>
+                    <h3>現役エンジニアの神サポート</h3>
+                    <p>業界トップクラスのエンジニアが、君のコードを直接レビュー。もはや、ただのメンターじゃない。</p>
                 </div>
                 <div class="feature-item">
-                    <h3>切磋琢磨できる仲間</h3>
-                    <p>同じ目標を持つ仲間と交流し、モチベーションを維持。一人では続かない学習も、皆と一緒なら頑張れます。</p>
+                    <div class="icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>最強の学習仲間</h3>
+                    <p>同じ志を持つ仲間たちと、24時間いつでも繋がれる。モチベーションが燃え尽きることはない。</p>
                 </div>
                 <div class="feature-item">
-                    <h3>実践的なプロジェクト</h3>
-                    <p>学んだ知識を活かして、チームでプロジェクト開発に挑戦。ポートフォリオになる成果物を作成できます。</p>
+                    <div class="icon"><i class="fas fa-rocket"></i></div>
+                    <h3>超実践的プロジェクト</h3>
+                    <p>ただの課題じゃない。世界にインパクトを与える、リアルなプロジェクトに今すぐジョインしよう。</p>
                 </div>
                 <div class="feature-item">
-                    <h3>最新技術の共有会</h3>
-                    <p>毎週開催される勉強会で、AI業界の最新トレンドをキャッチアップ。常に最先端の知識を学べます。</p>
+                    <div class="icon"><i class="fas fa-brain"></i></div>
+                    <h3>最先端技術の共有</h3>
+                    <p>毎週のライブセッションで、最新のAIトレンドをインプット。時代をリードする存在になれ。</p>
                 </div>
             </div>
         </section>
 
         <section class="section" id="testimonials">
-            <h2>参加者の声</h2>
+            <h2>VOICE</h2>
             <div class="testimonial">
-                <p>"質問するとすぐに的確なアドバイスがもらえて、エラーで何日も悩むことがなくなりました。本当に感謝しています！"</p>
-                <p class="author">- T.Kさん (20代・学生)</p>
+                <p>"ここのお陰で、未経験から3ヶ月でAIベンチャーに内定しました。人生が変わった...！"</p>
+                <p class="author">- R.Sさん (20代)</p>
             </div>
             <div class="testimonial">
-                <p>"一人では絶対に完成できなかったポートフォリオを、チーム開発で作り上げることができました。最高の仲間に出会えました。"</p>
-                <p class="author">- S.Yさん (30代・会社員)</p>
+                <p>"Discordが活発すぎて、毎日が刺激的。寝る間も惜しんでコードを書いています(笑)"</p>
+                <p class="author">- K.Tさん (30代)</p>
             </div>
         </section>
 
         <section class="section" id="cta">
-            <h2>さあ、あなたもAI学習の第一歩を踏み出そう</h2>
-            <p>私たちのコミュニティで、AIエンジニアになる夢を叶えませんか？<br>参加は下のボタンから。あなたをお待ちしています。</p>
-            <a href="https://discord.gg/your-invite-link" class="cta-button">今すぐDiscordに参加する</a>
+            <h2>未来への扉は、ここにある。</h2>
+            <p>迷っている時間はない。今すぐ、この革命に参加しよう。</p>
+            <a href="https://discord.gg/your-invite-link" class="cta-button discord-button"><i class="fab fa-discord"></i> いますぐ飛び込む</a>
         </section>
     </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 AIプログラミング学習コミュニティ. All Rights Reserved.</p>
+            <p>&copy; 2024 AI REVOLUTION. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 
 </body>
 </html>
